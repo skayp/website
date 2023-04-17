@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Quiz </title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+</head>
+    <h3 id="userId"></h3>
+
+<body onload="ftch()">
+    <header class="header bg-primary">
+        <div class="left-title">JS Quiz</div>
+        <div class="right-title">Total Questions: <span id="tque"></span></div>
+        <div class="clearfix"></div>
+    </header>
+    <button name="start" id="start" class="btn btn-success" onclick="ftch()">Start</button>
+                    
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="result" class="quiz-body">
+                        <form name="quizForm" onSubmit="">
+                            <fieldset class="form-group">
+                                <h4><span id="qid"></span> <span id="question"></span></h4>
+                                <div class="option-block-container" id="question-options">
+                                    <!-- <input type="radio"id="r1">
+                                    <label for="a" id="1"></label><br>
+                                    <input type="radio"id="r2">
+                                    <label for="a" id="2"></label><br>
+                                    <input type="radio"id="r3">
+                                    <label for="a" id="3"></label><br>
+                                    <input type="radio"id="r4">
+                                    <label for="a" id="4"></label><br> -->
+                                    <input type="radio" name="options"value="a" id="r1">
+                                    <label for="a" id="1"></label><br>
+                                    <input type="radio" name="options"value="b" id="r2">
+                                    <label for="b" id="2"></label><br>
+                                    <input type="radio" name="options"value="c"id="r3">
+                                    <label for="c" id="3"></label><br>
+                                    <input type="radio" name="options"value="d"id="r4">
+                                    <label for="d" id="4"></label><br>
+                                </div> <!-- End of option block -->
+                            </fieldset>
+                        </form>
+                        <button name="previous" id="previous" class="btn btn-success" onclick="prv()">Previous</button>
+                        &nbsp;  
+                        <button name="next" id="next" class="btn btn-success" onclick="nxt()">Next</button>
+                    </div>
+                </div> <!-- End of col-sm-12 -->
+            </div> <!-- End of row -->
+        </div> <!-- ENd of container fluid -->
+    </div> <!-- End of content -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script src="/static/jsc/ex.js" type="text/javascript"></script>
+
+</body>
+
+</html>

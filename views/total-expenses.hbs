@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Expenses</title>
+</head>
+
+<body>
+    <h1>Expenses for user {{ userName }}</h1>
+
+    <h2>Total expenses:</h2>
+    <table>
+        <tr>
+            <th>Total</th>
+        </tr>
+        {{#each totalExpenses}}
+        <tr>
+            <td>{{ this.total }}</td>
+        </tr>
+        {{/each}}
+    </table>
+
+    <h2>Category expenses:</h2>
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Total</th>
+        </tr>
+        {{#each categoryExpenses}}
+        <tr>
+            <td>{{ this._id }}</td>
+            <td>{{ this.total }}</td>
+        </tr>
+        {{/each}}
+    </table>
+    <h2>Datewise expenses:</h2>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Total</th>
+        </tr>
+        {{#each dateExpenses}}
+        <tr>
+            <td>{{ this._id }}</td>
+            <td>{{ this.total }}</td>
+        </tr>
+        {{/each}}
+    </table>
+</body>
+
+</html>

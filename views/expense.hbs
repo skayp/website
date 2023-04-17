@@ -1,0 +1,200 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+	<title>Expense Form</title>
+	<script>
+		function toggleOtherCategory() {
+			var categorySelect = document.getElementById("category");
+			var otherCategoryDiv = document.getElementById("otherCategoryDiv");
+			if (categorySelect.value == "Other") {
+				otherCategoryDiv.style.display = "block";
+			} else {
+				otherCategoryDiv.style.display = "none";
+			}
+		}
+
+		function validateForm() {
+			var rupeesField = document.getElementById("rupees");
+			if (rupeesField.value < 0) {
+				alert("Rupees must be a positive number.");
+				rupeesField.focus();
+				return false;
+			}
+			return true;
+		}
+		function loadExpenses() {
+			// Send an AJAX request to the /expenses route
+			fetch('/total-expenses')
+				.then(response => response.text())
+				.then(html => {
+					// Replace the contents of the #expensesTable div with the response
+					document.getElementById('expensesTable').innerHTML = html;
+				})
+				.catch(error => console.error(error));
+		}
+	</script>
+	<style>
+		label {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		input[type="text"],
+		input[type="number"],
+		select {
+			margin-bottom: 10px;
+			padding: 5px;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+		}
+
+		select {
+			width: 150px;
+		}
+
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Expense Tracker</h1>
+	<form method="post" action="/expenses" onsubmit="return validateForm()">
+		<label for="date">Date:</label>
+		<input type="date" id="date" name="date" required>
+
+		<label for="category">Category:</label>
+		<select id="category" name="category" onchange="toggleOtherCategory()" required>
+			<option value="">- Select a category -</option>
+			<option value="Food">Food</option>
+			<option value="Recharge">Recharge</option>
+			<option value="Fare">Fare</option>
+			<option value="Other">Other</option>
+		</select>
+
+		<div id="otherCategoryDiv" style="display:none;">
+			<label for="otherCategory">Other Category:</label>
+			<input type="text" id="otherCategory" name="otherCategory" placeholder="Enter other category">
+		</div>
+
+		<label for="remarks">Remarks:</label>
+		<input type="text" id="remarks" name="remarks" placeholder="Enter any remarks">
+
+		<label for="rupees">Rupees:</label>
+		<input type="number" id="rupees" name="rupees" placeholder="Enter expense in rupees" required>
+
+		<input type="submit" value="Add Expense">
+	</form>
+	<button onclick="loadExpenses()">Load Expenses</button>
+	<div id="expensesTable"></div>
+
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Expense Form</title>
+	<script>
+		function toggleOtherCategory() {
+			var categorySelect = document.getElementById("category");
+			var otherCategoryDiv = document.getElementById("otherCategoryDiv");
+			if (categorySelect.value == "Other") {
+				otherCategoryDiv.style.display = "block";
+			} else {
+				otherCategoryDiv.style.display = "none";
+			}
+		}
+
+		function validateForm() {
+			var rupeesField = document.getElementById("rupees");
+			if (rupeesField.value < 0) {
+				alert("Rupees must be a positive number.");
+				rupeesField.focus();
+				return false;
+			}
+			return true;
+		}
+		function loadExpenses() {
+			window.location.href = "/total-expenses";
+		}
+	</script>
+	<style>
+		label {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		input[type="text"],
+		input[type="number"],
+		select {
+			margin-bottom: 10px;
+			padding: 5px;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+		}
+
+		select {
+			width: 150px;
+		}
+
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Expense Tracker</h1>
+	<form method="post" action="/expenses" onsubmit="return validateForm()">
+		<label for="date">Date:</label>
+		<input type="date" id="date" name="date" required>
+
+		<label for="category">Category:</label>
+		<select id="category" name="category" onchange="toggleOtherCategory()" required>
+			<option value="">- Select a category -</option>
+			<option value="Food">Food</option>
+			<option value="Recharge">Recharge</option>
+			<option value="Fare">Fare</option>
+			<option value="Other">Other</option>
+		</select>
+
+		<div id="otherCategoryDiv" style="display:none;">
+			<label for="otherCategory">Other Category:</label>
+			<input type="text" id="otherCategory" name="otherCategory" placeholder="Enter other category">
+		</div>
+
+		<label for="remarks">Remarks:</label>
+		<input type="text" id="remarks" name="remarks" placeholder="Enter any remarks">
+
+		<label for="rupees">Rupees:</label>
+		<input type="number" id="rupees" name="rupees" placeholder="Enter expense in rupees" required>
+
+		<input type="submit" value="Add Expense">
+		<button onclick="loadExpenses()">Load Expenses</button>
+	</form>
+
+</body>
+
+</html>
